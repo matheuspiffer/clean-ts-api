@@ -4,13 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch",
-    "test:staged": "jest"
-  },
-  "husky": {
-      "hooks":{
-          "pre-commit": "lint-staged"
-      }
+    "test": "jest",
+    "test:staged": "jest",
+    "husky-install": "husky install",
+    "lint-staged": "lint-staged --config lint-staged.js"
   },
   "keywords": [],
   "author": "",
