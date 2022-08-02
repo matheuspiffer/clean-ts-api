@@ -1,6 +1,6 @@
 module.exports = {
-    "*.ts": [
-        "eslint 'src/**' --fix",
-        "npm run test:staged"
-    ]
+  '*.{js,jsx,ts,tsx}': [
+    "eslint 'src/**' --fix",
+    'npm run test:staged'
+  ]
 }
