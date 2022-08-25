@@ -1,5 +1,4 @@
 import bcrypt from 'bcrypt'
-import { resolve } from 'path'
 import { Encrypter } from '../../data/protocols/encryter'
 
 export class BcryptAdapter implements Encrypter {
@@ -9,7 +8,7 @@ export class BcryptAdapter implements Encrypter {
   }
 
   async encrypt(value: string): Promise<string> {
-    await bcrypt.hash(value, this.salt)
-    return ''
+    const hash = await bcrypt.hash(value, this.salt)
+    return hash
   }
 }
