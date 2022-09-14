@@ -1,3 +1,4 @@
+import { LogMongoRepository } from './../../infra/db/mongodb/log-repository/log'
 import { HttpRequest, HttpResponse } from './../../presentation/protocols/http'
 import { BcryptAdapter } from './../../infra/criptography/bcrypt-adapter'
 import { DbAddAccount } from '../../data/usecases/add-account/db-add-account'
@@ -17,5 +18,6 @@ export const makeSignUpController = (): Controller => {
     emailValidatorAdapter,
     dbAddAccount
   )
-  return new LogControllerDecorator(signUpController)
+  const logMongoRepository = new LogMongoRepository()
+  return new LogControllerDecorator(signUpController, logMongoRepository)
 }
